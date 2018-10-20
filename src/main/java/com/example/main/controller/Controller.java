@@ -15,14 +15,20 @@ public class Controller {
 	@Autowired
 	private IMyBean myBean;
 	private final static Logger LOGGER = LoggerFactory.getLogger(Controller.class);
-	
-	@GetMapping("home")
+
+	@GetMapping("/test")
+    public String testMethod(){
+        LOGGER.info("Serving GET request test API");
+	    return "System is healthy!";
+    }
+
+	@GetMapping("/home")
 	public String getIndex(){
         LOGGER.info("Serving GET request for home page");
 		return "index";
 	}
 
-	@GetMapping("first")
+	@GetMapping("/first")
 	public String getOne(){
 	    LOGGER.info("Serving GET request for one page");
 		return "one";
